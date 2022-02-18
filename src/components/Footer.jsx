@@ -1,9 +1,9 @@
-import './styles/Footer.css'
+import './styles/footer.css'
 function Footer() {
     return(
-        <header className='footer'>
+        <footer className='footer'>
             <h1 className='footer_title'>Footer</h1>
-        </header>
+        </footer>
     )
 }
 export default Footer

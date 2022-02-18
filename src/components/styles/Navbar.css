@@ -1,8 +1,16 @@
-.navbar{
-    background-color: black;
-    margin-top: 0;
-    padding: 0;
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    font-size: 1rem;
+    color: #fcfcfc;
 }
-.title{
-    color: white;
+.max-header {
+    background-color: #2A2D34;
+    height: 4.3rem;
+    text-align: center;
+}
+.logo-container{
+    color: #fcfcfc;
+    padding-top: 1rem;
 }

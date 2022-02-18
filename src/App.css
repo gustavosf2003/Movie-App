@@ -6,6 +6,9 @@
 html{
     scroll-behavior: smooth;
 }
+body{
+    background-color: #fcfcfc;
+}
 li {
     list-style: none;
 }
@@ -25,6 +28,10 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+main{
+    margin: 0 6% 2rem 6%;
+    padding-top: 8%
+}
 /* Page Scroll*/
 body::-webkit-scrollbar{
     width: 9px;
@@ -32,7 +39,7 @@ body::-webkit-scrollbar{
 }
 
 body::-webkit-scrollbar-track {
-  margin-top: 5rem;
+  margin-top: 4.3rem;
   background: hsl(0, 0%, 90%);
 }
 
