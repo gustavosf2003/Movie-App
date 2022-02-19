@@ -1,4 +1,7 @@
 .footer{
     background-color: #2A2D34;
+    height: 4rem;
+    text-align: center;
     color: white;
+    padding-top: 1.8rem;
 }

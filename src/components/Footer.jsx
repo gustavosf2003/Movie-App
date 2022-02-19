@@ -1,8 +1,9 @@
 import './styles/footer.css'
 function Footer() {
+    const year = new Date().getFullYear()
     return(
-        <footer className='footer'>
-            <h1 className='footer_title'>Footer</h1>
+        <footer className="footer">
+            <p>©{year}</p>
         </footer>
     )
 }

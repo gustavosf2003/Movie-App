@@ -1,18 +1,107 @@
-.movie_title,.movie_subtitle{
-    display: flex;
+.movie_section,.movie_subtitle{
+  display: flex;
+  flex-wrap: wrap;
 }
 .movie_description{
-    width: 60%;
+  width: 60%;
+}
+.movie_title{
+  border-left: 0.5rem solid #2574a9;
+  padding-left: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.8em;
 }
 .imdb_content{
-    display: flex;
-    margin-right: 3%;
+  display: flex;
+  margin-right: 3%;
 }
 .imdb_image{
-    width: 2.1rem;
-    height: 1.1rem;
-    margin-top: 0.2rem;
+  width: 2.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+}
+.movie_img{
+  width: 11.25rem;
+}
+.episodes_title{
+  font-size: 1.3em;
 }
 .description{
-    margin-top: 0.8rem;
+  margin-top: 0.8rem;
+  text-align: justify;
+  margin-right: 5rem;
+}
+.accordions{
+  margin-top: 1.4rem;
+}
+.accordion{
+  margin-top: 0.4rem;
+  position: relative;
+}
+.accordion_click{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity:0;
+  visibility: 0;
+}
+.accordion_title{
+  background-color: #353535;
+  color:#fcfcfc;
+  border-radius: 0.2rem;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding:1em;
+}
+.accordion_label::before{
+  content:"";
+  border: 15px solid transparent;
+  border-left:20px solid white;
+}
+.accordion_label{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.accordion_item{
+  max-height:0;
+  overflow: hidden;
+  transition: 0.5s;
+  background-color: white;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.accordion_item p {
+  padding:2em;
+}
+.accordion_click:checked ~ .accordion_title .accordion_label::before{
+  border-left:15px solid transparent;
+  border-top:20px solid white;
+  margin: 0.75rem 0.625rem 0 0;
+}
+.accordion_click:checked ~ .accordion_title ~ .accordion_item{
+  max-height: 6.25rem;
+}
+/* Media Queries */
+@media (max-width: 624px) {
+  .movie_title{
+    border-left: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.8em;
+  }
+  .movie_subtitle{
+    display: block;
+  }
+  .description{
+    text-align: center;
+    margin-right: 0;
+  }
+  .imdb_content{
+    margin-left: 40%;
+  }
+  .movie_description,.movie_cover{
+    width: 100%;
+    text-align: center;
+  }
 }

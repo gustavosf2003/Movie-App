@@ -8,6 +8,7 @@ html{
 }
 body{
     background-color: #fcfcfc;
+    font-family: "Cera Pro Medium";
 }
 li {
     list-style: none;
@@ -32,6 +33,11 @@ main{
     margin: 0 6% 2rem 6%;
     padding-top: 8%
 }
+.ghost {
+    width: 100%;
+    height: 1.5rem;
+    background-color: #fcfcfc;
+}
 /* Page Scroll*/
 body::-webkit-scrollbar{
     width: 9px;
@@ -45,4 +51,14 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #2A2D34;
+}
+@media (max-width: 624px) {
+    .ghost{
+        height: 3rem;
+    }
+}
+/* Fonts */
+@font-face {
+    src: url("./assets/fonts/Cera\ Pro\ Medium.otf");
+    font-family: "Cera Pro Medium";
 }

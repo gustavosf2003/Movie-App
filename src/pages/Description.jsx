@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-function Movie(){
+import './styles/description.css'
+function Description(){
     return(
         <div>
             <p>Página 2</p>
@@ -9,4 +10,4 @@ function Movie(){
         </div>
     )
 }
-export default Movie
+export default Description
