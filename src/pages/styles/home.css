@@ -22,6 +22,7 @@
 }
 .movie_img{
   width: 11.25rem;
+  border-radius: 0.4rem;
 }
 .episodes_title{
   font-size: 1.3em;
@@ -42,7 +43,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
   width: 100%;
   opacity:0;
   visibility: 0;
@@ -68,7 +68,7 @@
 .accordion_item{
   max-height:0;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.4s;
   background-color: white;
   box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
 }

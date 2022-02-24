@@ -2,16 +2,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Imdb from '../assets/img/imdb.png'
-import PowerPuff from '../assets/img/powerpuff.png'
 //styles
 import './styles/home.css'
 class Home extends React.Component {
     state = {
         movie: [],
         image: [],
-        rating: []
+        rating: [],
+        episodes: []
     };
     componentDidMount() {
+        //Description movie
         fetch('https://api.tvmaze.com/shows/6771')
             .then(res => res.json())
             .then(res => {
@@ -20,12 +21,26 @@ class Home extends React.Component {
                     image: res.image.medium,
                     rating: res.rating.average 
                 });
+                console.log(res)
             });
+        //Single Episode
+        fetch('https://api.tvmaze.com/shows/6771/episodes')
+        .then(res => res.json())
+        .then(res => {
+            this.setState({
+                episodes: res,
+            });
+            console.log(res)
+        });
     }
     render() {
-        var movie = this.state.movie
-        var image = this.state.image
-        var rating = this.state.rating
+        const movie = this.state.movie
+        const image = this.state.image
+        const rating = this.state.rating
+        const episodes = this.state.episodes
+        const season1 = episodes.slice(0,39)
+        const season2 = episodes.slice(39,80)
+        const season3 = episodes.slice(80,119)
         return (
             <div>
             <section className="ghost"></section>
@@ -38,7 +53,7 @@ class Home extends React.Component {
                                 <img className="imdb_image" src={Imdb} alt="Imdb Image" />
                                 <p>{rating}</p>
                             </article>
-                            <p> Release {movie.premiered}</p>
+                            <p> Release {String(movie.premiered).slice(0,4)}</p>
                         </article>
                         <p className="description" dangerouslySetInnerHTML={{__html:movie.summary}}/>
                     </article>
@@ -57,58 +72,49 @@ class Home extends React.Component {
                                 Season 1
                             </label>
                         </article>
-                        <article className="accordion_item">
-                            <p>
-                                • Episode 1
-                            </p>
-                        </article>
-                        <article className="accordion_item">
-                            <p>
-                                • Episode 1
-                            </p>
-                        </article>
+                        {
+                            season1.map(item => (
+                                <article key={item.id} className="accordion_item">
+                                    {   <Link to={'/description/' + item.season + '/' + item.number}>
+                                            <p>•{item.name}-{item.number}</p>
+                                        </Link>
+                                    }
+                                </article>
+                            ))
+                        }
                     </section>
                     <section className="accordion">
                         <input className="accordion_click" type="checkbox" id="bbb"/>
                         <article className="accordion_title">
                             <label className="accordion_label" htmlFor="bbb">
-                                Season 1
+                                Season 2
                             </label>
                         </article>
-                        <article className="accordion_item">
-                            <p>
-                                • Episode 1
-                            </p>
-                        </article>
-                        <article className="accordion_item">
-                            <p>
-                                • Episode 1
-                            </p>
-                        </article>
+                        {
+                            season2.map(item => (
+                                <article key={item.id} className="accordion_item">
+                                    <p>•{item.name}-{item.id}</p>   
+                                </article>
+                            ))
+                        }
                     </section>
                     <section className="accordion">
                         <input className="accordion_click" type="checkbox" id="ggg"/>
                         <article className="accordion_title">
                             <label className="accordion_label" htmlFor="ggg">
-                                Season 1
+                                Season 3
                             </label>
                         </article>
-                        <article className="accordion_item">
-                            <p>
-                                • Episode 1
-                            </p>
-                        </article>
-                        <article className="accordion_item">
-                            <p>
-                                • Episode 1
-                            </p>
-                        </article>
+                        {
+                            season3.map(item => (
+                                <article key={item.id} className="accordion_item">
+                                    <p>•{item.name}-{item.id}</p>   
+                                </article>
+                            ))
+                        }
                     </section>
                 </section>
             </section>
-            <li>
-                <Link to="/description">description</Link>
-            </li>
         </div>
         );
     }

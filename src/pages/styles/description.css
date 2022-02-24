@@ -1,0 +1,25 @@
+ul.breadcrumb {
+    list-style: none;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li span {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li span:hover {
+    color: #01447e;
+    display: inline-block;
+    text-decoration: underline;
+}
+.episode_img{
+    width: 18.75rem;
+    border-radius: 0.4rem;
+}
