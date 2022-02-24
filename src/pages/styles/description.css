@@ -21,5 +21,22 @@ ul.breadcrumb li span:hover {
 }
 .episode_img{
     width: 18.75rem;
+    height: 12rem;
     border-radius: 0.4rem;
+}
+.episode_title{
+    margin-top: 4rem;
+    font-size: 1.3em;
+}
+.episode_subtitle{
+    display: flex;
+    flex-wrap: wrap;
+}
+.episode_subtitle p{
+    margin: 0 2rem 0 0;
+}
+.trailer{
+    width: 100%;
+    height: 18.75rem;
+    margin-top: 1rem;
 }

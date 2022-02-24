@@ -54,6 +54,13 @@
   box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
   padding:1em;
 }
+.accordion_item a{
+  text-decoration: none;
+  color: black;
+}
+.accordion_item span{
+  margin-right: 0.2rem;
+}
 .accordion_label::before{
   content:"";
   border: 15px solid transparent;

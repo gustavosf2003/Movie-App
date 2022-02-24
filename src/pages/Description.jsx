@@ -13,6 +13,7 @@ function Description(){
         var episodeReleased = new Date(res.airstamp)
         document.getElementById("date").innerHTML = ` ${episodeReleased.getFullYear()}`
         document.getElementById("season").innerHTML = ` ${res.season} `
+        document.getElementById("runtime").innerHTML = ` ${res.runtime} minutes`
         document.getElementById("episode").innerHTML = ` ${res.number} `
         document.getElementById("description").innerHTML = res.summary
         document.getElementById("cover").src = res.image.original
@@ -32,27 +33,31 @@ function Description(){
                     <article className="movie_description">
                         <article>
                             <h3 className="movie_title" id="name"></h3>
-                            <article className="movie_subtitle">
-                                <article className="imdb_content">
+                            <article className="episode_subtitle">
                                     <p>
                                         Season 
                                         <span id="season"></span>
                                         x Ep
                                         <span id="episode"></span> 
                                     </p>
-                                </article>
-                                <p> Released 
+                                <p> 
+                                    Released 
                                     <span id="date"></span>
                                 </p>
+                                <p> 
+                                    Runtime 
+                                    <span id="runtime"></span>
+                                </p>
                             </article>
-                            <p className="description" id="description">
-                            </p>
+                            <p className="description" id="description"></p>
                         </article>
                     </article>
                     <article className="movie_cover">
                         <img className="episode_img" id="cover" alt="Power Puff Girls" />
                     </article>
                 </section>
+                <p className="episode_title">Watch the trailer:</p>
+                <iframe className="trailer" src="https://www.youtube.com/embed/PlpUABjD_p0" title="Powerpuff Trailer"></iframe>
             </div>
     )
 }

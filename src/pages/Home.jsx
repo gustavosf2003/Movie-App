@@ -75,8 +75,11 @@ class Home extends React.Component {
                         {
                             season1.map(item => (
                                 <article key={item.id} className="accordion_item">
-                                    {   <Link to={'/description/' + item.season + '/' + item.number}>
-                                            <p>•{item.name}-{item.number}</p>
+                                    {   <Link to={`/description/${item.season}/${item.number}`}>
+                                            <p>
+                                                <span>•</span>
+                                                {item.name}
+                                            </p>
                                         </Link>
                                     }
                                 </article>
@@ -93,7 +96,13 @@ class Home extends React.Component {
                         {
                             season2.map(item => (
                                 <article key={item.id} className="accordion_item">
-                                    <p>•{item.name}-{item.id}</p>   
+                                    {   <Link to={'/description/' + item.season + '/' + item.number}>
+                                            <p>
+                                                <span>•</span>
+                                                {item.name}
+                                            </p>
+                                        </Link>
+                                    }
                                 </article>
                             ))
                         }
@@ -108,7 +117,13 @@ class Home extends React.Component {
                         {
                             season3.map(item => (
                                 <article key={item.id} className="accordion_item">
-                                    <p>•{item.name}-{item.id}</p>   
+                                    {   <Link to={'/description/' + item.season + '/' + item.number}>
+                                            <p>
+                                                <span>•</span>
+                                                {item.name}
+                                            </p>
+                                        </Link>
+                                    }
                                 </article>
                             ))
                         }
