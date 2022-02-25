@@ -91,6 +91,11 @@
   max-height: 6.25rem;
 }
 /* Media Queries */
+@media (min-width:1920px) {
+  .home{
+    margin-bottom: 10%;
+  }
+}
 @media (max-width: 624px) {
   .movie_title{
     border-left: none;

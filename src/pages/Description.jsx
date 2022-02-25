@@ -1,5 +1,6 @@
 import {useParams} from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import noImage from '../assets/img/noImage.png'
 import './styles/description.css'
 function Description(){
     const pageName = "Description"
@@ -11,15 +12,31 @@ function Description(){
         console.log(res)
         document.getElementById("name").innerHTML = res.name
         var episodeReleased = new Date(res.airstamp)
-        document.getElementById("date").innerHTML = ` ${episodeReleased.getFullYear()}`
         document.getElementById("season").innerHTML = ` ${res.season} `
-        document.getElementById("runtime").innerHTML = ` ${res.runtime} minutes`
         document.getElementById("episode").innerHTML = ` ${res.number} `
-        document.getElementById("description").innerHTML = res.summary
-        document.getElementById("cover").src = res.image.original
+        try{
+            document.getElementById("cover").src = res.image.original
+        }catch{
+            document.getElementById("cover").src = noImage
+        }
+        if (res.airstamp) {
+            document.getElementById("date").innerHTML = ` ${episodeReleased.getFullYear()}`
+        } else {
+            document.getElementById("date").innerHTML = "XX/YY/ZZZZ"
+        }
+        if (res.runtime) {
+            document.getElementById("runtime").innerHTML = ` ${res.runtime} minutes`
+        } else {
+            document.getElementById("runtime").innerHTML = "0"
+        }
+        if (res.summary) {
+            document.getElementById("description").innerHTML = res.summary
+        } else {
+            document.getElementById("description").innerHTML = `Oops!! We don't have a summary for ${res.name} yet`
+        }
     })
     return(
-            <div>
+            <div className="description">
                 <ul className="breadcrumb">
                     <li className="breadcumb-item">
                     <Link to={'/'}>
@@ -40,7 +57,7 @@ function Description(){
                                         x Ep
                                         <span id="episode"></span> 
                                     </p>
-                                <p> 
+                                <p>
                                     Released 
                                     <span id="date"></span>
                                 </p>
@@ -56,8 +73,6 @@ function Description(){
                         <img className="episode_img" id="cover" alt="Power Puff Girls" />
                     </article>
                 </section>
-                <p className="episode_title">Watch the trailer:</p>
-                <iframe className="trailer" src="https://www.youtube.com/embed/PlpUABjD_p0" title="Powerpuff Trailer"></iframe>
             </div>
     )
 }

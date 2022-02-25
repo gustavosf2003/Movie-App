@@ -1,5 +1,6 @@
 ul.breadcrumb {
     list-style: none;
+    margin-bottom: 2rem;
 }
 ul.breadcrumb li {
     display: inline;
@@ -24,19 +25,22 @@ ul.breadcrumb li span:hover {
     height: 12rem;
     border-radius: 0.4rem;
 }
-.episode_title{
-    margin-top: 4rem;
-    font-size: 1.3em;
-}
 .episode_subtitle{
     display: flex;
     flex-wrap: wrap;
 }
+.episode_title{
+    font-size: 1.3rems;
+}
 .episode_subtitle p{
     margin: 0 2rem 0 0;
 }
-.trailer{
-    width: 100%;
-    height: 18.75rem;
-    margin-top: 1rem;
+.description{
+    margin-bottom: 13%;
 }
+/* Media Queries */
+@media (min-width:1920px) {
+    .description{
+      margin-bottom: 19%;
+    }
+  }

@@ -42,7 +42,7 @@ class Home extends React.Component {
         const season2 = episodes.slice(39,80)
         const season3 = episodes.slice(80,119)
         return (
-            <div>
+            <section className="home">
             <section className="ghost"></section>
             <section className="movie_section">
                 <article className="movie_description">
@@ -66,9 +66,9 @@ class Home extends React.Component {
                 <p className="episodes_title">Episodes:</p>
                 <section className="accordions">
                     <section className="accordion">
-                        <input className="accordion_click" type="checkbox" id="abc"/>
+                        <input className="accordion_click" type="checkbox" id="acc"/>
                         <article className="accordion_title">
-                            <label className="accordion_label" htmlFor="abc">
+                            <label className="accordion_label" htmlFor="acc">
                                 Season 1
                             </label>
                         </article>
@@ -130,7 +130,7 @@ class Home extends React.Component {
                     </section>
                 </section>
             </section>
-        </div>
+            </section>
         );
     }
 }
