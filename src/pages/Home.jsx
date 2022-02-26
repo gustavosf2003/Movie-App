@@ -85,7 +85,7 @@ class Home extends React.Component {
                             {
                                 season1.map(item => (
                                     <article key={item.id} className="accordion_item">
-                                        {   <Link to={`/movie-app/description/${item.season}/${item.number}`}>
+                                        {   <Link to={`/Movie-App/description/${item.season}/${item.number}`}>
                                                 <p>
                                                     <span>•</span>
                                                     {item.name}
@@ -106,7 +106,7 @@ class Home extends React.Component {
                             {
                                 season2.map(item => (
                                     <article key={item.id} className="accordion_item">
-                                        {   <Link to={`/movie-app/description/${item.season}/${item.number}`}>
+                                        {   <Link to={`/Movie-App/description/${item.season}/${item.number}`}>
                                                 <p>
                                                     <span>•</span>
                                                     {item.name}
@@ -127,7 +127,7 @@ class Home extends React.Component {
                             {
                                 season3.map(item => (
                                     <article key={item.id} className="accordion_item">
-                                        {   <Link to={`/movie-app/description/${item.season}/${item.number}`}>
+                                        {   <Link to={`/Movie-App/description/${item.season}/${item.number}`}>
                                                 <p>
                                                     <span>•</span>
                                                     {item.name}

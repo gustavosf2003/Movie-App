@@ -46,7 +46,7 @@ function Description(){
         <section className="description">
             <ul className="breadcrumb">
                 <li className="breadcumb-item">
-                <Link to={'/movie-app/'}>
+                <Link to={'/Movie-App/'}>
                     <span>Home</span>
                 </Link>
                 </li>
