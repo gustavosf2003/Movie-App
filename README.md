@@ -54,7 +54,7 @@ About my professional skills, I have fluency in English and knowledge in:
 
 I'm a 2x Microsoft Technology Associate (MTA), I have one os Javascript fundamentals and another with SQL fundamentals.
 
-Check my portfolio if you want to know more about me
-● [Gustavo Ferreira](https://gustavosf2003.github.io/Portfolio/)\
+Check my portfolio if you want to know more about me\
+● [Gustavo Ferreira](https://gustavosf2003.github.io/Portfolio/)
 
 By Hacker 👋
