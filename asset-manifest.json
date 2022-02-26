@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/movie-app/static/css/main.a8815f73.css",
-    "main.js": "/movie-app/static/js/main.f5570317.js",
-    "static/js/787.8916439e.chunk.js": "/movie-app/static/js/787.8916439e.chunk.js",
-    "static/media/Cera Pro Medium.otf": "/movie-app/static/media/Cera Pro Medium.2bc02ae84a1e73c231d6.otf",
-    "static/media/imdb.png": "/movie-app/static/media/imdb.c523e283dbd9f1f33a32.png",
-    "index.html": "/movie-app/index.html",
-    "main.a8815f73.css.map": "/movie-app/static/css/main.a8815f73.css.map",
-    "main.f5570317.js.map": "/movie-app/static/js/main.f5570317.js.map",
-    "787.8916439e.chunk.js.map": "/movie-app/static/js/787.8916439e.chunk.js.map"
+    "main.css": "/Movie-App/static/css/main.7b843815.css",
+    "main.js": "/Movie-App/static/js/main.fed3be66.js",
+    "static/js/787.8916439e.chunk.js": "/Movie-App/static/js/787.8916439e.chunk.js",
+    "static/media/Cera Pro Medium.otf": "/Movie-App/static/media/Cera Pro Medium.2bc02ae84a1e73c231d6.otf",
+    "static/media/imdb.png": "/Movie-App/static/media/imdb.c523e283dbd9f1f33a32.png",
+    "index.html": "/Movie-App/index.html",
+    "main.7b843815.css.map": "/Movie-App/static/css/main.7b843815.css.map",
+    "main.fed3be66.js.map": "/Movie-App/static/js/main.fed3be66.js.map",
+    "787.8916439e.chunk.js.map": "/Movie-App/static/js/787.8916439e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8815f73.css",
-    "static/js/main.f5570317.js"
+    "static/css/main.7b843815.css",
+    "static/js/main.fed3be66.js"
   ]
 }
