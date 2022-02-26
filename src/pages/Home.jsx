@@ -13,7 +13,7 @@ class Home extends React.Component {
         rating: [],
         episodes: []
     };
-    //API using react js
+    //This API was made using react js
     componentDidMount() {
         //API that returns general show data
         try {

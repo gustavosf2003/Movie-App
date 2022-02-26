@@ -9,7 +9,7 @@ function Description(){
     const pageName = "Description"
     const {season} = useParams()
     const {episode} = useParams()
-    //API without React.js
+    //This API was made without React.js
     try {
         fetch(`https://api.tvmaze.com/shows/6771/episodebynumber?season=${season}&number=${episode}`)
         .then(res => res.json())

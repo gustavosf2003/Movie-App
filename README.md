@@ -1,4 +1,4 @@
-# Interface
+# Interface 👋
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Check the documentation before code :)
 
@@ -52,4 +52,9 @@ About my professional skills, I have fluency in English and knowledge in:
 -SQL Server\
 -JavaScript 
 
-I'm a 2x Microsoft Technology Associate (MTA), I have one os Javascript fundamentals and another with SQL fundamentals
+I'm a 2x Microsoft Technology Associate (MTA), I have one os Javascript fundamentals and another with SQL fundamentals.
+
+Check my portfolio if you want to know more about me
+● [Gustavo Ferreira](https://gustavosf2003.github.io/Portfolio/)\
+
+By Hacker 👋
