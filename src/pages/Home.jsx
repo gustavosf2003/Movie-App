@@ -1,6 +1,8 @@
 
 import React from 'react';
+//Router
 import { Link } from 'react-router-dom'
+//Medias
 import Imdb from '../assets/img/imdb.png'
 //styles
 import './styles/home.css'
@@ -11,29 +13,39 @@ class Home extends React.Component {
         rating: [],
         episodes: []
     };
+    //API using react js
     componentDidMount() {
-        //Description movie
-        fetch('https://api.tvmaze.com/shows/6771')
+        //API that returns general show data
+        try {
+            fetch('https://api.tvmaze.com/shows/6771')
             .then(res => res.json())
             .then(res => {
                 this.setState({
                     movie: res,
                     image: res.image.medium,
-                    rating: res.rating.average 
+                    rating: res.rating.average
                 });
-                console.log(res)
+                console.log("First connection")
             });
-        //Single Episode
-        fetch('https://api.tvmaze.com/shows/6771/episodes')
-        .then(res => res.json())
-        .then(res => {
-            this.setState({
-                episodes: res,
+        } catch (e) {
+            console.log(`Ooops!! There was a problem in the API connection: ${e}`)
+        }
+        //API that returns single episode data
+        try{
+            fetch('https://api.tvmaze.com/shows/6771/episodes')
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    episodes: res,
+                });
+                console.log("Second connection")
             });
-            console.log(res)
-        });
+        }catch (e){
+            console.log(`Ooops!! There was a problem in the API connection: ${e}`)
+        }
     }
     render() {
+        //Api data
         const movie = this.state.movie
         const image = this.state.image
         const rating = this.state.rating
@@ -43,93 +55,91 @@ class Home extends React.Component {
         const season3 = episodes.slice(80,119)
         return (
             <section className="home">
-            <section className="ghost"></section>
-            <section className="movie_section">
-                <article className="movie_description">
-                    <article>
-                        <h3 className="movie_title">PowerPuff Girls</h3>
+                <section className="ghost"></section>
+                <section className="description_container">
+                    <article className="description_text">
+                        <h3 className="movie_title" translate="no" id="title">{movie.name}</h3>
                         <article className="movie_subtitle">
                             <article className="imdb_content">
                                 <img className="imdb_image" src={Imdb} alt="Imdb Image" />
                                 <p>{rating}</p>
                             </article>
-                            <p> Release {String(movie.premiered).slice(0,4)}</p>
-                        </article>
+                            <p> Released {String(movie.premiered).slice(0,4)}</p>
                         <p className="description" dangerouslySetInnerHTML={{__html:movie.summary}}/>
+                        </article>
                     </article>
-                </article>
-                <article className="movie_cover">
-                    <img src={image} className="movie_img" alt="Power Puff Girls" />
-                </article>
-            </section>
-            <section>
-                <p className="episodes_title">Episodes:</p>
-                <section className="accordions">
-                    <section className="accordion">
-                        <input className="accordion_click" type="checkbox" id="acc"/>
-                        <article className="accordion_title">
-                            <label className="accordion_label" htmlFor="acc">
-                                Season 1
-                            </label>
-                        </article>
-                        {
-                            season1.map(item => (
-                                <article key={item.id} className="accordion_item">
-                                    {   <Link to={`/description/${item.season}/${item.number}`}>
-                                            <p>
-                                                <span>•</span>
-                                                {item.name}
-                                            </p>
-                                        </Link>
-                                    }
-                                </article>
-                            ))
-                        }
-                    </section>
-                    <section className="accordion">
-                        <input className="accordion_click" type="checkbox" id="bbb"/>
-                        <article className="accordion_title">
-                            <label className="accordion_label" htmlFor="bbb">
-                                Season 2
-                            </label>
-                        </article>
-                        {
-                            season2.map(item => (
-                                <article key={item.id} className="accordion_item">
-                                    {   <Link to={'/description/' + item.season + '/' + item.number}>
-                                            <p>
-                                                <span>•</span>
-                                                {item.name}
-                                            </p>
-                                        </Link>
-                                    }
-                                </article>
-                            ))
-                        }
-                    </section>
-                    <section className="accordion">
-                        <input className="accordion_click" type="checkbox" id="ggg"/>
-                        <article className="accordion_title">
-                            <label className="accordion_label" htmlFor="ggg">
-                                Season 3
-                            </label>
-                        </article>
-                        {
-                            season3.map(item => (
-                                <article key={item.id} className="accordion_item">
-                                    {   <Link to={'/description/' + item.season + '/' + item.number}>
-                                            <p>
-                                                <span>•</span>
-                                                {item.name}
-                                            </p>
-                                        </Link>
-                                    }
-                                </article>
-                            ))
-                        }
+                    <article className="movie_cover">
+                        <img src={image} className="movie_img" alt={movie.name} />
+                    </article>
+                </section>
+                <section className="episodes_container">
+                    <p className="episodes_title">Episodes:</p>
+                    <section className="accordions">
+                        <section className="accordion">
+                            <input className="accordion_click" type="checkbox" id="acc"/>
+                            <article className="accordion_title">
+                                <label className="accordion_label" htmlFor="acc">
+                                    Season 1
+                                </label>
+                            </article>
+                            {
+                                season1.map(item => (
+                                    <article key={item.id} className="accordion_item">
+                                        {   <Link to={`/description/${item.season}/${item.number}`}>
+                                                <p>
+                                                    <span>•</span>
+                                                    {item.name}
+                                                </p>
+                                            </Link>
+                                        }
+                                    </article>
+                                ))
+                            }
+                        </section>
+                        <section className="accordion">
+                            <input className="accordion_click" type="checkbox" id="bbb"/>
+                            <article className="accordion_title">
+                                <label className="accordion_label" htmlFor="bbb">
+                                    Season 2
+                                </label>
+                            </article>
+                            {
+                                season2.map(item => (
+                                    <article key={item.id} className="accordion_item">
+                                        {   <Link to={`/description/${item.season}/${item.number}`}>
+                                                <p>
+                                                    <span>•</span>
+                                                    {item.name}
+                                                </p>
+                                            </Link>
+                                        }
+                                    </article>
+                                ))
+                            }
+                        </section>
+                        <section className="accordion">
+                            <input className="accordion_click" type="checkbox" id="ggg"/>
+                            <article className="accordion_title">
+                                <label className="accordion_label" htmlFor="ggg">
+                                    Season 3
+                                </label>
+                            </article>
+                            {
+                                season3.map(item => (
+                                    <article key={item.id} className="accordion_item">
+                                        {   <Link to={`/description/${item.season}/${item.number}`}>
+                                                <p>
+                                                    <span>•</span>
+                                                    {item.name}
+                                                </p>
+                                            </Link>
+                                        }
+                                    </article>
+                                ))
+                            }
+                        </section>
                     </section>
                 </section>
-            </section>
             </section>
         );
     }

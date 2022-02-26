@@ -1,8 +1,11 @@
+// Css
 import './app.css';
+//Components
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from '../src/pages/Home'
 import Description from '../src/pages/Description'
+//Router
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {

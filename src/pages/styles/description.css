@@ -4,10 +4,10 @@ ul.breadcrumb {
 }
 ul.breadcrumb li {
     display: inline;
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 ul.breadcrumb li+li:before {
-    padding: 8px;
+    padding: 0.5rem;
     color: black;
     content: "/\00a0";
 }
@@ -43,4 +43,4 @@ ul.breadcrumb li span:hover {
     .description{
       margin-bottom: 19%;
     }
-  }
+}

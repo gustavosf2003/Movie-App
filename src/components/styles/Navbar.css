@@ -2,12 +2,12 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #fcfcfc;
 }
 .max-header {
     background-color: #2A2D34;
-    height: 4.3rem;
+    height: 4.7rem;
     text-align: center;
 }
 .logo-container{

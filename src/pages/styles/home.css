@@ -1,8 +1,8 @@
-.movie_section,.movie_subtitle{
+.description_container,.movie_subtitle{
   display: flex;
   flex-wrap: wrap;
 }
-.movie_description{
+.description_text{
   width: 60%;
 }
 .movie_title{
@@ -63,8 +63,8 @@
 }
 .accordion_label::before{
   content:"";
-  border: 15px solid transparent;
-  border-left:20px solid white;
+  border: 1rem solid transparent;
+  border-left: 1.25rem solid white;
 }
 .accordion_label{
   cursor: pointer;
@@ -83,8 +83,8 @@
   padding:2em;
 }
 .accordion_click:checked ~ .accordion_title .accordion_label::before{
-  border-left:15px solid transparent;
-  border-top:20px solid white;
+  border-left: 1rem solid transparent;
+  border-top: 1.25rem solid white;
   margin: 0.75rem 0.625rem 0 0;
 }
 .accordion_click:checked ~ .accordion_title ~ .accordion_item{
@@ -112,7 +112,10 @@
   .imdb_content{
     margin-left: 40%;
   }
-  .movie_description,.movie_cover{
+  .episodes_container{
+    margin-top: 2rem;
+  }
+  .description_text,.movie_cover{
     width: 100%;
     text-align: center;
   }

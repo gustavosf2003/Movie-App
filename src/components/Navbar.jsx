@@ -8,8 +8,6 @@ function Navbar() {
                 </div>
             </header>
         </div>
-
-
     )
 }
 export default Navbar
