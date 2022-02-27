@@ -7,7 +7,6 @@ import Home from '../src/pages/Home'
 import Description from '../src/pages/Description'
 //Router
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 function App() {
   return (
       <div className="App">
@@ -24,5 +23,4 @@ function App() {
       </div>
   );
 }
-
 export default App;

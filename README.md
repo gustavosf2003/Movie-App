@@ -34,6 +34,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 > This project show the list of episodes with the description of the PowerPuff Girls show. [React Router](https://reactrouter.com/) was used to navigate between pages
 
+> There are two routes for this project. The first route shows the movie description and the url is /Movie-App/ . The second route is dynamic that shows each episode data and have the url of /Movie-App/:season/:episode
+
+>The project was hosted in GitHub pages and the main url is https://gustavosf2003.github.io/Movie-App/
+
 ## Developer
 
 > This project was made entirely by Mr. Gustavo de Sousa Ferreira. My contact below for questions and inquiries:

@@ -8,6 +8,7 @@ import Imdb from '../assets/img/imdb.png'
 import './styles/home.css'
 class Home extends React.Component {
     state = {
+        api: [],
         movie: [],
         image: [],
         rating: [],
@@ -16,14 +17,16 @@ class Home extends React.Component {
     //This API was made using react js
     componentDidMount() {
         //API that returns general show data
+        const apiUrl = "https://api.tvmaze.com/shows/6771"
         try {
-            fetch('https://api.tvmaze.com/shows/6771')
+            fetch(apiUrl)
             .then(res => res.json())
             .then(res => {
                 this.setState({
                     movie: res,
                     image: res.image.medium,
-                    rating: res.rating.average
+                    rating: res.rating.average,
+                    api: apiUrl
                 });
                 console.log("First connection")
             });
@@ -32,7 +35,7 @@ class Home extends React.Component {
         }
         //API that returns single episode data
         try{
-            fetch('https://api.tvmaze.com/shows/6771/episodes')
+            fetch(`${apiUrl}/episodes`)
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -46,6 +49,7 @@ class Home extends React.Component {
     }
     render() {
         //Api data
+        const api = this.state.api
         const movie = this.state.movie
         const image = this.state.image
         const rating = this.state.rating
@@ -56,12 +60,13 @@ class Home extends React.Component {
         return (
             <section className="home">
                 <section className="ghost"></section>
+                <p className="api">{api}</p>
                 <section className="description_container">
                     <article className="description_text">
                         <h3 className="movie_title" translate="no" id="title">{movie.name}</h3>
                         <article className="movie_subtitle">
                             <article className="imdb_content">
-                                <img className="imdb_image" src={Imdb} alt="Imdb Image" />
+                                <img className="imdb_image" src={Imdb} alt="Imdb" />
                                 <p>{rating}</p>
                             </article>
                             <p> Released {String(movie.premiered).slice(0,4)}</p>
@@ -144,5 +149,4 @@ class Home extends React.Component {
         );
     }
 }
-
 export default Home;

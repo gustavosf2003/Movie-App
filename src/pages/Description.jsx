@@ -55,7 +55,7 @@ function Description(){
             <section className="ghost"></section>
             <section className="description_container">
                 <article className="description_text">
-                        <h3 className="movie_title" id="name"></h3>
+                        <h3 className="movie_title" id="name">Title</h3>
                         <article className="episode_subtitle">
                             <p>
                                 Season

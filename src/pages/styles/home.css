@@ -2,6 +2,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.api{
+  display: none;
+}
 .description_text{
   width: 60%;
 }
